@@ -1,2 +1,2 @@
-# leetcode-in-c
+# leetcode-c
 Repo for doing leetcode in C
