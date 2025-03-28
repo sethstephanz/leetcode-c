@@ -58,7 +58,7 @@ int main() {
     int arg1 = 2;
     int arg2 = 3;
 
-    int *result = my_func(arg1, arg2);
+    int result = my_func(arg1, arg2);
     return 0;
 }
 
