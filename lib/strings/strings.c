@@ -52,11 +52,9 @@ void free_str(String *str) {
 }
 
 void print_str(String *str) {
-    printf("String (size: %d, length: %d): ", str->capacity, str->length);
     for (int i = 0; i < str->capacity; i++) {
         printf("%c", str->data[i]);
     }
-    printf("\n");
 }
 
 int lower(String *str) {
