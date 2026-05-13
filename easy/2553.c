@@ -1,10 +1,6 @@
-#include "lib/dynamic_arrays/dynamic_array.h"
-#include "lib/linked_lists/linked_lists.h"
-#include "lib/strings/strings.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <strings.h>
 
 // 2553. Separate the Digits in an Array
 // https://leetcode.com/problems/separate-the-digits-in-an-array/description/?envType=daily-question&envId=2026-05-12
@@ -48,43 +44,20 @@ int *separateDigits(int *nums, int numsSize, int *returnSize) {
             if (res_size == res_cap) {
                 int new_cap = res_cap + 10;
                 int *temp = realloc(res, new_cap * sizeof(int));
-
                 if (temp == NULL) {
                     fprintf(stderr, "error: realloc\n");
                     exit(1);
                 }
-
                 res = temp;
                 res_cap = new_cap;
-                // print_int_array(res, res_cap);
             }
-            // fprintf(stderr, "digit: %d\n", digits[d]);
             res[res_size++] = digits[d--];
         }
         memset(digits, 0, digits_cap * sizeof(digits[0]));
     }
 
     *returnSize = res_size;
-    // fprintf(stderr, "returnsize intern: %d\n", *returnSize);
 
     free(digits);
     return res;
-}
-
-// driver code
-int main() {
-    int nums[] = {13, 25, 83, 77, 12, 13, 255, 200};
-    int returnSize = 0;
-    int *returnSize_ptr = &returnSize;
-    // -> [1,3,2,5,8,3,7,7]
-
-    int *res = separateDigits(nums, sizeof(nums) / sizeof(nums[0]), returnSize_ptr);
-
-    // fprintf(stderr, "returnSize: %d\n", *returnSize_ptr);
-
-    // print_int_array(nums, nums_size);
-    print_int_array(res, *returnSize_ptr);
-
-    // free(res);
-    return 0;
 }
