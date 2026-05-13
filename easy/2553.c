@@ -42,7 +42,7 @@ int *separateDigits(int *nums, int numsSize, int *returnSize) {
         d--; // need to start at first/last digit. step back one
         while (d >= 0) {
             if (res_size == res_cap) {
-                int new_cap = res_cap + 10;
+                int new_cap = res_cap * 2;
                 int *temp = realloc(res, new_cap * sizeof(int));
                 if (temp == NULL) {
                     fprintf(stderr, "error: realloc\n");
