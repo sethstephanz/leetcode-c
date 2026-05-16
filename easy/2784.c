@@ -6,7 +6,7 @@
 // 2784. Check if Array is Good
 // https://leetcode.com/problems/check-if-array-is-good/description/?envType=daily-question&envId=2026-05-14
 
-// qsort, callback practice (pointer decay applies to functions, too!). otherwise just condition checking
+// qsort, callback practice (decay applies to functions, too!). otherwise just condition checking
 
 int comp(const void *a, const void *b) {
     // comp callback for qsort
